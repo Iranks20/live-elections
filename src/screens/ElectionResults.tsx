@@ -185,11 +185,11 @@ export default function ElectionResults() {
                   
                   return (
                     <tr key={village.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                      <td className="border px-1 sm:px-2 py-1 font-semibold break-words text-xs sm:text-sm md:text-base max-w-[8ch] sm:max-w-[14ch] md:max-w-[22ch] lg:max-w-[28ch]" style={{wordBreak: 'break-word'}}>{village.name}</td>
-                      <td className="border px-1 sm:px-2 py-1 text-yellow-800 font-bold text-center whitespace-nowrap">{village.serugandaVotes}</td>
-                      <td className="border px-1 sm:px-2 py-1 text-blue-800 font-bold text-center whitespace-nowrap">{village.bitangaroVotes}</td>
-                      <td className="border px-1 sm:px-2 py-1 text-center whitespace-nowrap">{village.totalVotes}</td>
-                      <td className="border px-1 sm:px-2 py-1 font-bold text-center whitespace-nowrap {village.serugandaVotes > village.bitangaroVotes ? 'text-yellow-700' : village.serugandaVotes < village.bitangaroVotes ? 'text-blue-700' : 'text-gray-700'}">
+                      <td className="px-1 sm:px-2 py-1 font-semibold break-words text-xs sm:text-sm md:text-base max-w-[8ch] sm:max-w-[14ch] md:max-w-[22ch] lg:max-w-[28ch]" style={{wordBreak: 'break-word'}}>{village.name}</td>
+                      <td className="px-1 sm:px-2 py-1 text-yellow-800 font-bold text-center whitespace-nowrap">{village.serugandaVotes}</td>
+                      <td className="px-1 sm:px-2 py-1 text-blue-800 font-bold text-center whitespace-nowrap">{village.bitangaroVotes}</td>
+                      <td className="px-1 sm:px-2 py-1 text-center whitespace-nowrap">{village.totalVotes}</td>
+                      <td className="px-1 sm:px-2 py-1 font-bold text-center whitespace-nowrap {village.serugandaVotes > village.bitangaroVotes ? 'text-yellow-700' : village.serugandaVotes < village.bitangaroVotes ? 'text-blue-700' : 'text-gray-700'}">
                         {village.serugandaVotes - village.bitangaroVotes}
                       </td>
                     </tr>
