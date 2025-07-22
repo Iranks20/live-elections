@@ -153,7 +153,7 @@ export default function ElectionResults() {
           </div>
           
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="min-w-full table-fixed divide-y divide-gray-200 shadow rounded-lg overflow-hidden w-full">
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
@@ -232,12 +232,13 @@ export default function ElectionResults() {
                 })}
               </tbody>
               <tfoot>
-                <tr className="bg-gray-100">
-                  <td className="px-6 py-4 font-bold">Totals</td>
-                  <td className="px-6 py-4 text-yellow-900 font-bold">{totalSeruganda}</td>
-                  <td className="px-6 py-4 text-blue-900 font-bold">{totalBitangaro}</td>
-                  <td className="px-6 py-4 font-bold">{grandTotal}</td>
-                  <td className="px-6 py-4 font-bold">{totalSeruganda - totalBitangaro}</td>
+                <tr className="bg-gray-100 sticky bottom-0 text-xs sm:text-base">
+                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-left">Totals</td>
+                  <td className="px-2 sm:px-6 py-2 sm:py-4 text-yellow-900 font-bold text-center">{totalSeruganda}</td>
+                  <td className="px-2 sm:px-6 py-2 sm:py-4 text-blue-900 font-bold text-center">{totalBitangaro}</td>
+                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-center">{grandTotal}</td>
+                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-center"></td>
+                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-center">{totalSeruganda - totalBitangaro}</td>
                 </tr>
               </tfoot>
             </table>
