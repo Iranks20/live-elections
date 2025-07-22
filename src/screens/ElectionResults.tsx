@@ -162,26 +162,21 @@ export default function ElectionResults() {
           
           <div className="overflow-x-auto w-full">
             <table className="min-w-full table-fixed divide-y divide-gray-200 shadow rounded-lg overflow-hidden w-full text-xs sm:text-sm md:text-base">
+              <colgroup>
+                <col style={{width: '30%'}} />
+                <col style={{width: '17%'}} />
+                <col style={{width: '17%'}} />
+                <col style={{width: '18%'}} />
+                <col style={{width: '18%'}} />
+              </colgroup>
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Constituency
-                  </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
-                    Seru (Turakomeje)
-                  </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
-                    Bitangaro (Vugurura)
-                  </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
-                    Total Votes
-                  </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
-                    Leading
-                  </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
-                    Margin
-                  </th>
+                  <th className="px-1 sm:px-2 py-1">Constituency</th>
+                  <th className="px-1 sm:px-2 py-1 text-yellow-700">Seru (Turakomeje)</th>
+                  <th className="px-1 sm:px-2 py-1 text-blue-700">Bitangaro (Vugurura)</th>
+                  <th className="px-1 sm:px-2 py-1">Total Votes</th>
+                  <th className="px-1 sm:px-2 py-1">Leading</th>
+                  <th className="px-1 sm:px-2 py-1">Margin</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -191,43 +186,20 @@ export default function ElectionResults() {
                   
                   return (
                     <tr key={village.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                      <td className="px-6 py-4">
+                      <td className="px-1 sm:px-2 py-1">
                         <div className="flex items-center">
                           <MapPin className="text-yellow-500 mr-2" size={16} />
                           <span className="font-medium text-gray-900">{village.name}</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-center">
-                        <div className="font-semibold text-gray-900">
-                          {village.serugandaVotes.toLocaleString()}
-                        </div>
+                      <td className="px-1 sm:px-2 py-1 text-yellow-800 font-bold text-center whitespace-nowrap">{village.serugandaVotes}</td>
+                      <td className="px-1 sm:px-2 py-1 text-blue-800 font-bold text-center whitespace-nowrap">{village.bitangaroVotes}</td>
+                      <td className="px-1 sm:px-2 py-1 text-center whitespace-nowrap">{village.totalVotes}</td>
+                      <td className="px-1 sm:px-2 py-1 font-bold text-center whitespace-nowrap {village.serugandaVotes > village.bitangaroVotes ? 'text-yellow-700' : village.serugandaVotes < village.bitangaroVotes ? 'text-blue-700' : 'text-gray-700'}">
+                        {villageLeader === 'seru' ? 'Seru' : 'Bitangaro'}
                       </td>
-                      <td className="px-6 py-4 text-center">
-                        <div className="font-semibold text-gray-900">
-                          {village.bitangaroVotes.toLocaleString()}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <div className="flex items-center justify-center">
-                          <Users className="text-gray-400 mr-1" size={16} />
-                          <span className="font-medium text-gray-900">
-                            {updatedTotal.toLocaleString()}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                          villageLeader === 'seru' 
-                            ? 'bg-yellow-100 text-yellow-800' 
-                            : 'bg-blue-100 text-blue-800'
-                        }`}>
-                          {villageLeader === 'seru' ? 'Seru' : 'Bitangaro'}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <div className="font-semibold text-gray-900">
-                          {village.serugandaVotes - village.bitangaroVotes}
-                        </div>
+                      <td className="px-1 sm:px-2 py-1 font-bold text-center whitespace-nowrap">
+                        {village.serugandaVotes - village.bitangaroVotes}
                       </td>
                     </tr>
                   )
@@ -235,11 +207,11 @@ export default function ElectionResults() {
               </tbody>
               <tfoot>
                 <tr className="bg-gray-100 sticky bottom-0 text-xs sm:text-base">
-                  <td className="px-2 sm:px-4 py-1 sm:py-2 font-bold text-left">Totals</td>
-                  <td className="px-2 sm:px-4 py-1 sm:py-2 text-yellow-900 font-bold text-center">{totalSeruganda}</td>
-                  <td className="px-2 sm:px-4 py-1 sm:py-2 text-blue-900 font-bold text-center">{totalBitangaro}</td>
-                  <td className="px-2 sm:px-4 py-1 sm:py-2 font-bold text-center">{grandTotal}</td>
-                  <td className="px-2 sm:px-4 py-1 sm:py-2 font-bold text-center">{totalSeruganda - totalBitangaro}</td>
+                  <td className="px-1 sm:px-2 py-1 font-bold text-left">Totals</td>
+                  <td className="px-1 sm:px-2 py-1 text-yellow-900 font-bold text-center">{totalSeruganda}</td>
+                  <td className="px-1 sm:px-2 py-1 text-blue-900 font-bold text-center">{totalBitangaro}</td>
+                  <td className="px-1 sm:px-2 py-1 font-bold text-center">{grandTotal}</td>
+                  <td className="px-1 sm:px-2 py-1 font-bold text-center">{totalSeruganda - totalBitangaro}</td>
                 </tr>
               </tfoot>
             </table>
