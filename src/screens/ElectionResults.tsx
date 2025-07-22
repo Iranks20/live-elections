@@ -47,7 +47,7 @@ export default function ElectionResults() {
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Live Election Results 2024
+              Live Election Results 2026
             </h1>
             <p className="text-yellow-100 text-lg">
               Real-time vote counting across all constituencies
