@@ -58,7 +58,7 @@ export default function ElectionResults() {
               Last updated: {formattedDate}
             </p>
             <p className="text-yellow-100 text-lg">
-              Real-time vote counting across all constituencies
+              Real-time vote counting across all Villages
             </p>
             <div className="flex items-center justify-center mt-3 text-yellow-100">
               <Clock size={16} className="mr-2" />
@@ -156,7 +156,7 @@ export default function ElectionResults() {
           <div className="bg-yellow-500 text-white px-6 py-4">
             <h3 className="text-xl font-bold flex items-center">
               <MapPin className="mr-2" size={20} />
-              Results by Constituency
+              Results by Village
             </h3>
           </div>
           
