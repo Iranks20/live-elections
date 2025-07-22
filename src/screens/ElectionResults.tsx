@@ -17,7 +17,7 @@ export default function ElectionResults() {
     { id: '1', name: 'Kanyenka-Muramba', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
     { id: '2', name: 'Migeshi-Muramba', serugandaVotes: 151, bitangaroVotes: 91, totalVotes: 242 },
     { id: '3', name: 'Murambi-Nyakinama', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
-    { id: '4', name: 'Nyabitare-Nyakinama', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
+    { id: '4', name: 'Nyabitare-Nyakinama', serugandaVotes: 181, bitangaroVotes: 77, totalVotes: 258 },
     { id: '5', name: 'Kabaya-Nyarusiza', serugandaVotes: 168, bitangaroVotes: 77, totalVotes: 245 },
     { id: '6', name: 'Karambi-Nyarusiza', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
     { id: '7', name: 'Bushoka-Nyarusiza', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 }
