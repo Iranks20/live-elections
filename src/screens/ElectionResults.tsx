@@ -280,7 +280,7 @@ export default function ElectionResults() {
       <footer className="bg-gray-800 text-white py-6 mt-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-300">
-            Powered by <span className="text-yellow-400 font-semibold">Supabase</span> • 
+            Powered by Iranks • +256771289654 • rankunda48@gmail.com • 
             Real-time election results system
           </p>
           <p className="text-sm text-gray-400 mt-2">
