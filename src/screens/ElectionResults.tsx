@@ -45,6 +45,9 @@ export default function ElectionResults() {
   const year = today.getFullYear()
   const formattedDate = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
 
+  // Winner announcement
+  const winnerName = "Supa (Hon Seruganda)"
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -69,6 +72,13 @@ export default function ElectionResults() {
           </div>
         </div>
       </header>
+
+      <div className="w-full flex flex-col items-center justify-center mb-6">
+        <div className="w-full max-w-2xl mx-auto bg-yellow-100 border-4 border-yellow-400 rounded-xl shadow-lg p-4 flex flex-col items-center mt-4 mb-6 animate-pulse">
+          <span className="text-2xl md:text-3xl font-extrabold text-yellow-800 mb-2">🎉 Congratulations! 🎉</span>
+          <span className="text-lg md:text-xl font-bold text-yellow-700 text-center">{winnerName} is the WINNER!</span>
+        </div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Candidate Totals */}
