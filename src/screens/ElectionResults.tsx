@@ -13,7 +13,7 @@ export default function ElectionResults() {
   // Initial lead for Hon Seruganda
   const initialSerugandaLead = 203
 
-  const [results, setResults] = useState<VillageResult[]>([
+  const [results] = useState<VillageResult[]>([
     { id: '1', name: 'Kanyenka-Muramba', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
     { id: '2', name: 'Migeshi-Muramba', serugandaVotes: 151, bitangaroVotes: 91, totalVotes: 242 },
     { id: '3', name: 'Murambi-Nyakinama', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
@@ -30,20 +30,6 @@ export default function ElectionResults() {
   const totalBitangaro = results.reduce((sum, village) => sum + village.bitangaroVotes, 0)
   const grandTotal = totalSeruganda + totalBitangaro
   const totalSerugandaWithLead = totalSeruganda + initialSerugandaLead
-
-  // Simulate live updates
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setResults(prev => prev.map(village => ({
-        ...village,
-        serugandaVotes: village.serugandaVotes + Math.floor(Math.random() * 5),
-        bitangaroVotes: village.bitangaroVotes + Math.floor(Math.random() * 5)
-      })))
-      setLastUpdated(new Date())
-    }, 10000) // Update every 10 seconds
-
-    return () => clearInterval(interval)
-  }, [])
 
   const getPercentage = (votes: number, total: number) => {
     return total > 0 ? ((votes / total) * 100).toFixed(1) : '0.0'
@@ -86,7 +72,7 @@ export default function ElectionResults() {
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <img 
-                  src="https://uxcanvas.ai/api/generated-images/03a340be-671f-43ef-9e51-f5d684f15cc9/5853f942-b9bd-427c-bd82-f327e516f4a3"
+                  src="/supa.jpeg"
                   alt="Hon SerugandaSuper Seru"
                   className="w-20 h-20 rounded-full object-cover border-4 border-yellow-400"
                 />
@@ -120,17 +106,17 @@ export default function ElectionResults() {
 
           {/* Hon Sam Bitangaro */}
           <div className={`bg-white rounded-xl shadow-lg border-4 p-6 ${
-            isLeading('bitangaro') ? 'border-yellow-400' : 'border-gray-200'
+            isLeading('bitangaro') ? 'border-blue-400' : 'border-gray-200'
           }`}>
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <img 
-                  src="https://uxcanvas.ai/api/generated-images/03a340be-671f-43ef-9e51-f5d684f15cc9/84b7e04a-0d2b-4753-ac7c-b6145eb7362c"
-                  alt="Hon Sam Bitangaro"
-                  className="w-20 h-20 rounded-full object-cover border-4 border-yellow-400"
+                  src="/sam.jpeg"
+                  alt="Bitangaro Sam"
+                  className="w-20 h-20 rounded-full object-cover border-4 border-blue-400"
                 />
                 {isLeading('bitangaro') && (
-                  <Trophy className="absolute -top-2 -right-2 text-yellow-500" size={24} />
+                  <Trophy className="absolute -top-2 -right-2 text-blue-500" size={24} />
                 )}
               </div>
               <div className="flex-1">
