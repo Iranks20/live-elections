@@ -40,6 +40,11 @@ export default function ElectionResults() {
     return totalBitangaro > totalSerugandaWithLead
   }
 
+  // Get today's date and year
+  const today = new Date()
+  const year = today.getFullYear()
+  const formattedDate = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -47,8 +52,11 @@ export default function ElectionResults() {
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Live Election Results 2026
+              Live Election Results {year}
             </h1>
+            <p className="text-yellow-100 text-lg mb-1">
+              Last updated: {formattedDate}
+            </p>
             <p className="text-yellow-100 text-lg">
               Real-time vote counting across all constituencies
             </p>
