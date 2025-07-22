@@ -143,7 +143,7 @@ export default function ElectionResults() {
             <div className="mt-4">
               <div className="bg-gray-200 rounded-full h-3">
                 <div 
-                  className="bg-yellow-500 h-3 rounded-full transition-all duration-500"
+                  className="bg-blue-500 h-3 rounded-full transition-all duration-500"
                   style={{ width: `${getPercentage(totalBitangaro, grandTotal)}%` }}
                 ></div>
               </div>
@@ -160,8 +160,8 @@ export default function ElectionResults() {
             </h3>
           </div>
           
-          <div className="overflow-x-auto">
-            <table className="min-w-full table-fixed divide-y divide-gray-200 shadow rounded-lg overflow-hidden w-full">
+          <div className="overflow-x-auto w-full">
+            <table className="min-w-full table-fixed divide-y divide-gray-200 shadow rounded-lg overflow-hidden w-full text-xs sm:text-sm md:text-base">
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
@@ -201,16 +201,10 @@ export default function ElectionResults() {
                         <div className="font-semibold text-gray-900">
                           {village.serugandaVotes.toLocaleString()}
                         </div>
-                        <div className="text-sm text-gray-500">
-                          {getPercentage(village.serugandaVotes, updatedTotal)}%
-                        </div>
                       </td>
                       <td className="px-6 py-4 text-center">
                         <div className="font-semibold text-gray-900">
                           {village.bitangaroVotes.toLocaleString()}
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {getPercentage(village.bitangaroVotes, updatedTotal)}%
                         </div>
                       </td>
                       <td className="px-6 py-4 text-center">
@@ -241,12 +235,11 @@ export default function ElectionResults() {
               </tbody>
               <tfoot>
                 <tr className="bg-gray-100 sticky bottom-0 text-xs sm:text-base">
-                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-left">Totals</td>
-                  <td className="px-2 sm:px-6 py-2 sm:py-4 text-yellow-900 font-bold text-center">{totalSeruganda}</td>
-                  <td className="px-2 sm:px-6 py-2 sm:py-4 text-blue-900 font-bold text-center">{totalBitangaro}</td>
-                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-center">{grandTotal}</td>
-                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-center"></td>
-                  <td className="px-2 sm:px-6 py-2 sm:py-4 font-bold text-center">{totalSeruganda - totalBitangaro}</td>
+                  <td className="px-2 sm:px-4 py-1 sm:py-2 font-bold text-left">Totals</td>
+                  <td className="px-2 sm:px-4 py-1 sm:py-2 text-yellow-900 font-bold text-center">{totalSeruganda}</td>
+                  <td className="px-2 sm:px-4 py-1 sm:py-2 text-blue-900 font-bold text-center">{totalBitangaro}</td>
+                  <td className="px-2 sm:px-4 py-1 sm:py-2 font-bold text-center">{grandTotal}</td>
+                  <td className="px-2 sm:px-4 py-1 sm:py-2 font-bold text-center">{totalSeruganda - totalBitangaro}</td>
                 </tr>
               </tfoot>
             </table>
