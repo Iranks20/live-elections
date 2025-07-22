@@ -171,6 +171,9 @@ export default function ElectionResults() {
                   <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
                     Leading
                   </th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
+                    Margin
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -219,10 +222,24 @@ export default function ElectionResults() {
                           {villageLeader === 'seru' ? 'Seru' : 'Bitangaro'}
                         </span>
                       </td>
+                      <td className="px-6 py-4 text-center">
+                        <div className="font-semibold text-gray-900">
+                          {village.serugandaVotes - village.bitangaroVotes}
+                        </div>
+                      </td>
                     </tr>
                   )
                 })}
               </tbody>
+              <tfoot>
+                <tr className="bg-gray-100">
+                  <td className="px-6 py-4 font-bold">Totals</td>
+                  <td className="px-6 py-4 text-yellow-900 font-bold">{totalSeruganda}</td>
+                  <td className="px-6 py-4 text-blue-900 font-bold">{totalBitangaro}</td>
+                  <td className="px-6 py-4 font-bold">{grandTotal}</td>
+                  <td className="px-6 py-4 font-bold">{totalSeruganda - totalBitangaro}</td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>
