@@ -14,7 +14,7 @@ export default function ElectionResults() {
   const initialSerugandaLead = 203
 
   const [results] = useState<VillageResult[]>([
-    { id: '1', name: 'Kanyenka-Muramba', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
+    { id: '1', name: 'Kanyenka-Muramba', serugandaVotes: 234, bitangaroVotes: 359, totalVotes: 593 },
     { id: '2', name: 'Migeshi-Muramba', serugandaVotes: 151, bitangaroVotes: 91, totalVotes: 242 },
     { id: '3', name: 'Murambi-Nyakinama', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
     { id: '4', name: 'Nyabitare-Nyakinama', serugandaVotes: 181, bitangaroVotes: 77, totalVotes: 258 },
