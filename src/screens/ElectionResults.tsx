@@ -221,7 +221,7 @@ export default function ElectionResults() {
             <div className="text-3xl font-bold text-gray-900 mb-2">
               {results.length}
             </div>
-            <div className="text-gray-600">Constituencies</div>
+            <div className="text-gray-600">Villages</div>
           </div>
           <div className="bg-white rounded-lg shadow p-6 text-center">
             <div className="text-3xl font-bold text-yellow-600 mb-2">
