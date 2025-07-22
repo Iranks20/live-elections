@@ -20,7 +20,7 @@ export default function ElectionResults() {
     { id: '4', name: 'Nyabitare-Nyakinama', serugandaVotes: 187, bitangaroVotes: 76, totalVotes: 263 },
     { id: '5', name: 'Kabaya-Nyarusiza', serugandaVotes: 168, bitangaroVotes: 77, totalVotes: 245 },
     { id: '6', name: 'Karambi-Nyarusiza', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 },
-    { id: '7', name: 'Bushoka-Nyarusiza', serugandaVotes: 0, bitangaroVotes: 0, totalVotes: 0 }
+    { id: '7', name: 'Bushoka-Nyarusiza', serugandaVotes: 278, bitangaroVotes: 131, totalVotes: 409 }
   ])
 
   const [lastUpdated, setLastUpdated] = useState(new Date())
